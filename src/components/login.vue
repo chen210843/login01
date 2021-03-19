@@ -68,7 +68,8 @@ export default {
     console.log("user=" +user)
      this.$router.replace('/home')
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    const accessToken = credential.accessToken;
+    const 
+    accessToken = credential.accessToken;
     console.log("Token=" + accessToken)
     // ...
   })
