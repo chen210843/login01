@@ -83,6 +83,21 @@ export default {
         })
     },
   },
+   beforeCreate() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user != null) {
+        // User is signed in.
+        // ให้แสดงชื่อ email รูป
+        this.name = user.displayName
+        this.email = user.email
+        this.photoURL = user.photoURL
+      } else {
+        // No user is signed in.
+        // กลับไปหน้า login
+        this.$router.replace('/')
+      }
+    })
+  },
 }
 </script>
 
